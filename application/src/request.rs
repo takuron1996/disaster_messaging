@@ -24,7 +24,7 @@ mod tests {
         }
     }
 
-    /// get通信のステータスコードが200（正常通信）であることをテスト
+    /// get通信のステータスコードが200（正常通信）である場合のテスト
     #[tokio::test]
     async fn test_get_response_200() {
         let request = init_request();
@@ -32,7 +32,7 @@ mod tests {
         assert_eq!(StatusCode::OK, request.get_response(url).await.status());
     }
 
-    /// get通信のステータスコードが200以外（異常通信）である事のテスト
+    /// get通信のステータスコードが200以外（異常通信）である場合のテスト
     #[should_panic]
     #[tokio::test]
     async fn test_get_response_404_panic() {
