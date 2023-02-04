@@ -11,6 +11,9 @@ run: format
 test: format
 	$(DOCKER) cargo test
 
+compile:
+	$(DOCKER) cargo build
+
 sh:
 	docker exec -it $(CONTAINER_NAME) /bin/sh
 
