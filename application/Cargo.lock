@@ -7,8 +7,10 @@ name = "application"
 version = "0.1.0"
 dependencies = [
  "http",
+ "once_cell",
  "reqwest",
  "scraper",
+ "serde",
  "tokio",
 ]
 

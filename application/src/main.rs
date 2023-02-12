@@ -1,13 +1,9 @@
-use reqwest::Client;
+use disaster_messaging::common::get_post_code;
 
-mod request;
+mod disaster_messaging;
 
 #[tokio::main]
 async fn main() {
-    let request = request::Request {
-        client: Client::new(),
-    };
-    let url = "https://crisis.yahoo.co.jp/evacuation/";
-    let html = request.get_response(url).await.text().await.unwrap();
+    let html = get_post_code(String::from("01"), String::from("札幌市北区北三十六条西")).await;
     println!("{html}");
 }
